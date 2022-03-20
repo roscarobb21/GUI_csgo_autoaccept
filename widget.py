@@ -43,7 +43,6 @@ class Widget(QWidget):
         self.startBtn = self.findChild(QPushButton, "startBtn")
         self.closeBtn = self.findChild(QPushButton, "closeBtn")
         self.logText  = self.findChild(QTextBrowser, "logText")
-        # self.progress = self.findChild(QProgressBar, "waitingProgress")
 
         self.startBtn.clicked.connect(self.acceptbtn_press)
         self.closeBtn.clicked.connect(self.closebtn_press)

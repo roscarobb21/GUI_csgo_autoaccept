@@ -37,7 +37,6 @@ class Worker(QtCore.QThread):
         app_dialog = app.top_window()
         while True:
             app_dialog.restore()
-            #acceptButton = pyautogui.locateOnScreen("./elements/acceptbtn.png", confidence=0.89)
             acceptButton = pyautogui.locateOnScreen("./elements/" + self.aspectFolder[self.aspectVal] + "/" + self.resArray[self.aspectVal][self.resVal] + "_acceptbtn.png", confidence=0.89)
             print(" PATH IS " + "./elements/" + self.aspectFolder[self.aspectVal] + "/" + self.resArray[self.aspectVal][self.resVal] + "_acceptbtn.png")
             playButtonDown = pyautogui.locateOnScreen("./elements/" + self.aspectFolder[self.aspectVal] + "/" + self.resArray[self.aspectVal][self.resVal] + "_playDown.png", confidence=0.89)
@@ -47,7 +46,8 @@ class Worker(QtCore.QThread):
             if(acceptButton):
                 pyautogui.doubleClick(acceptButton)
                 self.logText.append("Match found and accepted! DoubleClick!")
-                #break
+                # break
+                # not breaking anymore because of multiple accepts needed
             elif (playButtonDown or playButtonUp):
                 self.logText.append("Still in menu or waiting for accept!")
             elif (not playButtonDown and not playButtonUp and not acceptButton and not acButton and not notAcButton):
