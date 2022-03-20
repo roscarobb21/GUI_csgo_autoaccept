@@ -19,7 +19,6 @@ class Worker(QtCore.QThread):
         self.progress = progress
 
     def run(self):
-        print("WORKER " + str(self.aspectVal))
         self.getCSGOPID()
         while (self.pid == 0 and not self.skip):
             sleep(2)
@@ -38,7 +37,6 @@ class Worker(QtCore.QThread):
         while True:
             app_dialog.restore()
             acceptButton = pyautogui.locateOnScreen("./elements/" + self.aspectFolder[self.aspectVal] + "/" + self.resArray[self.aspectVal][self.resVal] + "_acceptbtn.png", confidence=0.89)
-            print(" PATH IS " + "./elements/" + self.aspectFolder[self.aspectVal] + "/" + self.resArray[self.aspectVal][self.resVal] + "_acceptbtn.png")
             playButtonDown = pyautogui.locateOnScreen("./elements/" + self.aspectFolder[self.aspectVal] + "/" + self.resArray[self.aspectVal][self.resVal] + "_playDown.png", confidence=0.89)
             playButtonUp = pyautogui.locateOnScreen("./elements/" + self.aspectFolder[self.aspectVal] + "/" + self.resArray[self.aspectVal][self.resVal] + "_play.png", confidence=0.89)
             acButton = pyautogui.locateOnScreen("./elements/" + self.aspectFolder[self.aspectVal] + "/" + self.resArray[self.aspectVal][self.resVal] + "_ac.png", confidence=0.89)
@@ -69,7 +67,6 @@ class Worker(QtCore.QThread):
         self.aspectFolder = ['43' ,  '169']
 
     def stop(self):
-        print("Thread stoped working!")
         self.terminate()
 
     def getCSGOPID(self):

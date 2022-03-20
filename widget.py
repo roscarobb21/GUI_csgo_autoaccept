@@ -16,7 +16,6 @@ from configparser import ConfigParser
 class Widget(QWidget):
     def __init__(self):
         super(Widget, self).__init__()
-        print("Main init")
         self.firstStart = False
         self.resolutionIndex = 0
         self.aspectIndex = 0
