@@ -7,3 +7,6 @@ Run autoaccept.exe from `./GUI_release`
 Select the proper aspect ratio and resolution
 <br>
 Click on Accept
+<br>
+Log window will show the current script progress
+<br>
